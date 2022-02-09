@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+body {
+  background-color: lightblue;
+  font-family: verdana;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+h1 {
+  color: white;
+  text-align: center;
+
+}
+h3 {
+	color: green;
+    text-align: left;
+    font-size: 22px; 
+}
+
+p {
+  text-align: left;
+    
+}
+#jobdescription {
+ margin: 0px;
+}
+.alignleft {
+ display: block; float: left;
+}
+.alignright {
+ display: block; float: right;
+}
+
+
+</style>
+</head>
+<body>
+<h1 style="text-align: center;">Karam Shounia</h1>
+<img src="https://media-exp1.licdn.com/dms/image/C5603AQEdagfITgJGjw/profile-displayphoto-shrink_800_800/0/1641417780490?e=1646870400&v=beta&t=tdD34gIDEA02xLHgEvFCalSV7TAF12_g1ECoQoMDPRE" alt="Karam" class="center">
+<p style="text-align: center;">Detroit Metroploitan Area, MI</p>
+
+<h3> About Me </h3>
+<p style="text-align: justify";> I am an Amazon Web Services (AWS) Certified Cloud Architect looking to join a diverse cloud team to expand my knowledge and experience of working in the cloud. I graduated with a doctorate degree in Pharmacy in 2018, and I am currently going through a career transition. I have leadership skills as I was leading a team in my previous position as Pharmacy Manager. I also believe that I have great communication skills, whether it be with team members or clients. These skills can help me excel in my new journey.</p>
+
+<h3>Relevant Skills</h3>
+<ul>
+<li>Amazon Web Services (AWS)</li>
+<li>Agile (Scrum, Kanban)</li>
+<li>Rally</li>
+<li>Microsoft Office (Excel, Word, PowerPoint)</li>
+<li>Python</li>
+<li>JSON</li>
+<li>Git/GitHub</li>
+<li>HTML/CSS</li>
+<li>Komodo IDE</li>
+</ul>
+
+
+<h3>Relevant Certifcation</h3>
+<ul>
+	<li>Amazon Web Services (AWS) Solutions Architect Associate, October 2021</li>
+	<li>Amazon Web Services (AWS) Cloud Practitioner, June 2021</li>
+</ul>
+
+<h3>Work Experience</h3>
+
+<div>
+	<span class="alignleft"><strong>CVS Pharmacy</strong> (Contingent) <br> <em>Pharmacist - COVID Vaccine Support</em> </span>
+	<span class="alignright"><strong>South Lyon, MI</strong> <br> Jan 2021 - Apr 2021</span>
+</div>
+<div style="clear: both;"></div>
+<p id="jobdescription">-Administered COVID Vaccination to patients</p> <br>
+
+
+
+<div>
+	<span class="alignleft"><strong>Knight Drugs</strong> <br><em>Pharmacy Manager</em></span>
+	<span class="alignright"><strong>Highland Park, MI</strong> <br>Apr 2019 - Apr 2020</span>
+</div>
+<div style="clear: both;"></div>
+<p id="jobdescription">- Received, filled, and dispensed medications to patients. <br />- Communicated clinical information with patients and health professionals regarding medications and therapy protocols. <br />- Supervised and mentored staff pharmacists and technicians. <br />- Ensured safe work environments, enforced operational discipline, and established performance standards. <br />- Performed daily administrative tasks to ensure continued pharmacy operations. <br />- Represented the facility in all state and federal regulatory audits, visits, and communication.</p> <br>
+
+<div>
+	<span class="alignleft"><strong>Advanced Pharmacy Practice Experience</strong><br><em>Pharmacy Student Rotations</em></span>
+	<span class="alignright"><strong>Downers Grove, IL</strong><br>Jun 2017 - Apr 2018</span>
+</div>
+<div style="clear: both;"></div>
+<p id="jobdescription">- Provided high quality care to patients in inpatient and outpatient settings.</p> <br>
+
+
+<div>
+	<span class="alignleft"><strong>CVS Pharmacy</strong><br><em>Pharmacy Technician</em></span>
+	<span class="alignright"><strong>Farmington, MI</strong><br>Sep 2012 - May 2014</span>
+</div>
+<div style="clear: both;"></div>
+<p id="jobdescription">-Assisted pharmacists in preparing medications for patients.</p>
+
+<h3>Education</h3>
+
+<div>
+	<span class="alignleft"><strong>Midwestern University, Chicago College of Pharmacy</strong><br>Doctor of Pharmacy</span>
+	<span class="alignright"><strong>Downers Grove, IL</strong><br>Graduated in 2018</span> 
+</div>
+<div style="clear: both;"></div> <br>
+
+<div>
+	<span class="alignleft"><strong>Wayne State University</strong><br>Pre-Pharmacy</span>
+	<span class="alignright"><strong>Detroit, MI</strong><br>Completed in 2014</span>
+</div>
+<div style="clear: both;"></div>
+
+<h3>Languages</h3>
+<ul>
+	<li>English - Fluent</li>
+	<li>Arabic - Fluent</li>
+</ul>
+
+<h3>Associations &amp; Activities</h3>
+<p>Kappa Psi Pharmaceutical Fraternity &ndash; Member/Historian 2014 - 2018 <br />Illinois Counsel of Health-System Pharmacists &ndash; Member 2015 - 2018</p>
+
+<h3>Contact Information</h3>
+<a href="https://www.linkedin.com/in/karamshounia/">LinkedIn</a>
+<a href="mailto:karam.shounia@gmail.com/">Email</a>
+<div>
+    <p class='alignright'>Visitor Count : <span id="counter">1</span></p>
+  </div>
+  
+<script>
+   
+   
+async function get_visitors() {
+       try {
+        let response = await fetch('https://mbp73gdbt4.execute-api.us-east-1.amazonaws.com/Prod/visitor_count/', {
+            method: 'GET',
+            headers: {
+                'x-api-key': 'hSj0maGEFmaZDJpt8ZwV243x9qlO3dtm1UpUxwYg',
+            }
+        });
+        let data = await response.json()
+        document.getElementById("counter").innerHTML = data['count'];
+        console.log(data);
+        return data;
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+get_visitors();
+   
+        
+      
+</script>
+</body>
+</html>
+
+
