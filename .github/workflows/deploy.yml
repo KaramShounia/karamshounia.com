@@ -32,7 +32,7 @@ jobs:
       - name: Deploy to AWS CloudFormation
         uses: aws-actions/aws-cloudformation-github-deploy@v1
         with:
-          name: website test
+          name: websitetest
           template: template.yaml
-          no-fail-on-empty-changeset: "0"
+          no-fail-on-empty-changeset: "1"
          
