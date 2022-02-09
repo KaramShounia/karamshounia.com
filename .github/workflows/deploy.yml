@@ -34,5 +34,6 @@ jobs:
         with:
           name: websitetest
           template: template.yaml
+          Capabilities: CAPABILITY_IAM,CAPABILITY_AUTO_EXPAND
           no-fail-on-empty-changeset: "1"
          
