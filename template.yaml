@@ -23,12 +23,14 @@ Resources:
       CodeUri: 's3://lambdaks/lambda_function.zip'
       Handler: lambda_function.lambda_handler
       Runtime: python3.8
+      Role: arn:aws:iam::120697988561:role/VisitorCountRole
       Events:
         VisitorCount:
           Type: Api 
           Properties:
             Path: /visitor_count
             Method: get
+            
 
 Outputs:
   VisitorCountApi:
@@ -37,6 +39,4 @@ Outputs:
   VisitorCountFunction:
     Description: "Visitor Count Lambda Function ARN"
     Value: !GetAtt VisitorCountFunction.Arn
-  VisitorCountFunctionIamRole:
-    Description: "Implicit IAM Role created for Visitor Count function"
-    Value: !GetAtt VisitorCountFunctionRole.Arn
+  
