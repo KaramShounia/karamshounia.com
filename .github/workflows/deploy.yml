@@ -27,8 +27,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
           AWS_REGION: 'us-east-1'   # optional: defaults to us-east-1
-          SOURCE_DIR: 'lambda_function.zip'      # optional: defaults to entire repository
-          DEST_DIR: 'lambda_function.zip'
+          SOURCE_DIR: 'lambda_function'      # optional: defaults to entire repository
 
       # Configure AWS Credential
       - name: Configure AWS Credentials
