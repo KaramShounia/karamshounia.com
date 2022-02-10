@@ -16,6 +16,14 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    
+      - name: Invoke test Lambda
+        uses: gagoar/invoke-aws-lambda@master
+        with:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+          FunctionName: test
+            
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout code from master branch
         uses: actions/checkout@main
@@ -45,4 +53,6 @@ jobs:
           template: template.yaml
           Capabilities: CAPABILITY_IAM,CAPABILITY_AUTO_EXPAND
           no-fail-on-empty-changeset: "1"
+          
+          
          
