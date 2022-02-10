@@ -30,8 +30,6 @@ Resources:
           Properties:
             Path: /visitor_count
             Method: get
-  KaramSTestBucket2:
-    Type: AWS::S3::Bucket
             
 
 Outputs:
