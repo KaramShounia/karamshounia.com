@@ -53,6 +53,15 @@ jobs:
           template: template.yaml
           Capabilities: CAPABILITY_IAM,CAPABILITY_AUTO_EXPAND
           no-fail-on-empty-changeset: "1"
-          
+    
+      - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.S3_HTML_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+          AWS_REGION: 'us-east-1'   # optional: defaults to us-east-1
+          SOURCE_DIR: 'index.html'      # optional: defaults to entire repository   
           
          
